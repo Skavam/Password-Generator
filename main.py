@@ -1,17 +1,18 @@
 # Password generator program by @Skavam on GitHub
 
 import random 
+from colorama import Fore
 
 def main():
     print("Welcome to the Password Generator")
     length = float(input("Enter the desired password length: "))
 
     if length <= 0:
-        print("Please enter a valid positive number for the password length.")
+        print(f"{Fore.RED}Please enter a valid positive number for the password length.{Fore.RESET}")
         return
     
     password = generate_password(int(length))
-    print(f"Generated Password: {password}")
+    print(f"Generated Password: {Fore.GREEN}{password}{Fore.RESET}")
 
 def generate_password(length):
     characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()[]';,/<>?{}|`~"
