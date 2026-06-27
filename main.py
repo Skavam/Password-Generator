@@ -14,7 +14,7 @@ def main():
         print(f"{Fore.RED}Please enter a valid number for the password length.{Fore.RESET}")
         return
 
-    if (length.isdigit() and int(length) <= 0):
+    if length <= 0:
         print(f"{Fore.RED}Please enter a valid positive number for the password length.{Fore.RESET}")
         return
     
