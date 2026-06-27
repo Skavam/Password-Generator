@@ -4,8 +4,13 @@ import random
 
 def main():
     print("Welcome to the Password Generator")
-    length = int(input("Enter the desired password length: "))
-    password = generate_password(length)
+    length = float(input("Enter the desired password length: "))
+
+    if length <= 0:
+        print("Please enter a valid positive number for the password length.")
+        return
+    
+    password = generate_password(int(length))
     print(f"Generated Password: {password}")
 
 def generate_password(length):
