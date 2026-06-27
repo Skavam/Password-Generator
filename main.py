@@ -5,9 +5,16 @@ from colorama import Fore
 
 def main():
     print("Welcome to the Password Generator")
-    length = float(input("Enter the desired password length: "))
+    length = input("Enter the desired password length: ")
 
-    if length <= 0:
+    try:
+        length = int(length)
+
+    except ValueError as error:
+        print(f"{Fore.RED}Please enter a valid number for the password length.{Fore.RESET}")
+        return
+
+    if (length.isdigit() and int(length) <= 0):
         print(f"{Fore.RED}Please enter a valid positive number for the password length.{Fore.RESET}")
         return
     
