@@ -4,7 +4,7 @@ import random
 from colorama import Fore
 
 def main():
-    print("Welcome to the Password Generator")
+    print(f"{Fore.LIGHTBLUE_EX}Welcome to the Password Generator{Fore.RESET}")
     length = input("Enter the desired password length: ")
 
     try:
@@ -19,7 +19,7 @@ def main():
         return
     
     password = generate_password(int(length))
-    print(f"Generated Password: {Fore.GREEN}{password}{Fore.RESET}")
+    print(f"\nGenerated Password: {Fore.GREEN}{password}{Fore.RESET}")
 
 def generate_password(length):
     characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()[]';,/<>?{}|`~"
